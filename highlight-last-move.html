@@ -45,11 +45,13 @@ javascript:(function(){
   <p>This bookmarklet jums lichess.org/training and (with a scond click) highlights the last move made on the Lichess board.</p>
 https://sl5net.github.io/lichess-bookmarklets/highlight-last-move.html
   <p>Drag this link to your bookmarks bar to install:</p>
-  <a href="javascript:(function(){if(document.querySelector('cg-board')){let%20clickCount=0;function%20addHighlightStyle(elements){elements.forEach(function(element){if(element){element.style.cssText+='box-shadow:0%200%2015px%20rgba(0,0,0,0.7);outline:5px%20solid%20black;background-image:linear-gradient(to%20bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2));'}});};const%20lastMoveSquares=document.querySelectorAll('.last-move');addHighlightStyle(lastMoveSquares);document.body.addEventListener('click',function(){clickCount++;console.log('Click%20count:%20'+clickCount);});setInterval(function(){const%20squares=document.querySelectorAll('.last-move');squares.forEach(function(square){if(!square.style.cssText.includes('box-shadow')){addHighlightStyle([square]);}});},2000);}else{window.location.href='https://lichess.org/training>Highlight Last Move or jump to training</a>
-  <p>This bookmarklet jums lichess.org/training and (with a scond click) highlights the last move made on the Lichess board.</p>
+
+
+<a href="javascript:(function(){if(document.querySelector('cg-board')){let%20clickCount=0;function%20addHighlightStyle(elements){elements.forEach(function(element){if(element){element.style.cssText+='box-shadow:0%200%2015px%20rgba(0,0,0,0.7);outline:5px%20solid%20black;background-image:linear-gradient(to%20bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2));'}});};const%20lastMoveSquares=document.querySelectorAll('.last-move');addHighlightStyle(lastMoveSquares);document.body.addEventListener('click',function(){clickCount++;console.log('Click%20count:%20'+clickCount);});setInterval(function(){const%20squares=document.querySelectorAll('.last-move');squares.forEach(function(square){if(!square.style.cssText.includes('box-shadow')){addHighlightStyle([square]);}});},2000);}else{window.location.href='https://lichess.org/training';}})();">Highlight Last Move or jump to training</a>
+
+    <p>This bookmarklet jums lichess.org/training and (with a scond click) highlights the last move made on the Lichess board.</p>
 https://sl5net.github.io/lichess-bookmarklets/highlight-last-move.html
   <p>Drag this link to your bookmarks bar to install:</p>
-  <a href="javascript:(function(){if(document.querySelectorAll('.last-move').length==0){window.location.href='https://lichess.org/training';}else{let clickCount=0;function addHighlightStyle(elements){elements.forEach(function(element){if(element){element.style.cssText+='box-shadow:0 0 15px rgba(0,0,0,0.7);outline:5px solid black;background-image:linear-gradient(to bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2));'}});};const lastMoveSquares=document.querySelectorAll('.last-move');addHighlightStyle(lastMoveSquares);document.body.addEventListener('click',function(){clickCount++;console.log('Click count: '+clickCount);});setInterval(function(){const squares=document.querySelectorAll('.last-move');squares.forEach(function(square){if(!square.style.cssText.includes('box-shadow')){addHighlightStyle([square]);}});},2000);}})()">Highlight Last Move</a>
 
 
 
