@@ -2,3 +2,12 @@
 <p>Additionally, it will disable the auto-enable next puzzle feature, so you can focus on solving the current puzzle without being automatically redirected to the next one.</p>
 <p>Drag this link to your bookmarks bar to install:</p>
 <a href="javascript:(function(){if(document.querySelector('cg-board')){let%20clickCount=0;function%20addHighlightStyle(elements){elements.forEach(function(element){if(element){element.style.cssText+='box-shadow:0%200%2015px%20rgba(0,0,0,0.7);outline:5px%20solid%20black;background-image:linear-gradient(to%20bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2));'}});};function%20replaceClasses(elements,newClass)%20{%20elements.forEach((element)%20=>%20{if%20(element)%20{element.classList.remove('black','white');element.classList.add(newClass);}});}%20function%20replaceWithInlineCss(elements,cssStyle)%20{%20elements.forEach((element)%20=>%20{if%20(element)%20{element.classList.remove('black','white');element.style.background%20=%20cssStyle;}});}%20const%20whiteBishops=document.querySelectorAll('.white.bishop');const%20blackBishops=document.querySelectorAll('.black.bishop');replaceClasses(whiteBishops,'unread');replaceWithInlineCss(blackBishops,'rgba(255,255,0,0.8)');const%20whiteRooks=document.querySelectorAll('.white.rook');const%20blackRooks=document.querySelectorAll('.black.rook');replaceClasses(whiteRooks,'unread');replaceWithInlineCss(blackRooks,'rgba(255,255,0,0.8)');const%20lastMoveSquares=document.querySelectorAll('.last-move');addHighlightStyle(lastMoveSquares);document.body.addEventListener('click',function(){clickCount++;console.log('Click%20count:%20'+clickCount);});setInterval(function(){const%20squares=document.querySelectorAll('.last-move');squares.forEach(function(square){if(!square.style.cssText.includes('box-shadow')){addHighlightStyle([square]);}});},2000);const%20autonextElements=document.querySelectorAll('#puzzle-toggle-autonext,%20label[for="puzzle-toggle-autonext"]');autonextElements.forEach((element)%20=>%20{element.remove();});}else{window.location.href='https://lichess.org/training';}})()">Semi-Blindfold Chess</a>
+<p>
+<a href="https://sl5net.github.io/lichess-bookmarklets/Semi-Blindfold.html">Source Semi-Blindfold.html</a>
+</p>
+
+
+
+  
+</body>
+</html>
