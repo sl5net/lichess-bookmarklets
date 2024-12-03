@@ -3,7 +3,7 @@
 <head>
   <title>Lichess Highlight Last Move Bookmarklet</title>
 </head>
-<body>
+<body>  
   <h1>Lichess Highlight Last Move Bookmarklet</h1>
   <p>This bookmarklet highlights the last move made on the Lichess board.</p>
   <p>Additionally, it will disable the auto-enable next puzzle feature, so you can focus on solving the current puzzle without being automatically redirected to the next one.</p>
@@ -15,7 +15,87 @@
 <a href="https://sl5net.github.io/lichess-bookmarklets/lichess-highlight-last-move-disable-autonext.html">Source of lichess-highlight-last-move-disable-autonext.html</a>
 </p>
 
+<pre>
+  // Bookmarklet für Lichess
 
+// Funktion, die den Code ausführt, wenn die Seite geladen ist
+(function() {
+  // Überprüfe, ob die Seite ein Schachbrett enthält
+  if (document.querySelector('cg-board')) {
+    // Funktion, die ein Element mit einem Inline-CSS-Stil ersetzt
+    function replaceWithInlineCss(elements, cssStyle) {
+      elements.forEach((element) => {
+        if (element) {
+          element.classList.remove('black', 'white');
+          element.style.background = cssStyle;
+          element.style.backgroundSize = 'cover';
+        }
+      });
+    }
+
+    // Finde das Element, das den Spielernamen enthält
+    const playerNameElement = document.querySelector('.player.color-icon.is.text a.user-link[href="/@/seeh"]');
+
+    // Wenn das Element gefunden wurde, ersetze den Hintergrund des Königs mit einem Bild
+    if (playerNameElement) {
+      const myColor = playerNameElement.parentNode.classList.contains('black') ? 'black' : 'white';
+      const myQueen = document.querySelector(`.${myColor}.queen`);
+      replaceWithInlineCss([myQueen], 'url(https://sl5.de/wp-content/uploads/2021/04/sl5net_r8_c04_16col_trans_w100_oil.gif)');
+    }
+
+    // Zähle die Klicks auf der Seite
+    let clickCount = 0;
+    function addHighlightStyle(elements) {
+      elements.forEach(function(element) {
+        if (element) {
+          element.style.cssText += 'box-shadow:0 0 15px rgba(0,0,0,0.7);outline:5px solid black;background-image:linear-gradient(to bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2));'
+        }
+      });
+    }
+
+    // Finde die Elemente, die die letzten Züge anzeigen
+    const lastMoveSquares = document.querySelectorAll('.last-move');
+    addHighlightStyle(lastMoveSquares);
+
+    // Überprüfe, ob das Spiel ein Rated-Spiel ist
+    const puzzleRatedElement = document.querySelector(".puzzle__side__user__rating");
+    const gameMetaInfosElement = document.querySelector('.game__meta__infos');
+    if ((puzzleRatedElement && puzzleRatedElement.querySelector('strong')) || (gameMetaInfosElement && gameMetaInfosElement.querySelector('.setup') && gameMetaInfosElement.querySelector('.setup').textContent.includes('Rated'))) {
+      // Wenn das Spiel ein Rated-Spiel ist, ändere den Hintergrund der Seite
+      if (puzzleRatedElement && puzzleRatedElement.querySelector('strong')) {
+        document.querySelector(".puzzle__side__user").style.backgroundColor = "#0B3B0B";
+      } else {
+        document.querySelector("main.round").style.backgroundColor = "#0B3B0B";
+      }
+    }
+
+    // Zähle die Klicks auf der Seite
+    document.body.addEventListener('click', function() {
+      clickCount++;
+      console.log('Click count: ' + clickCount);
+    });
+
+    // Aktualisiere die Hervorhebung der letzten Züge alle 2 Sekunden
+    setInterval(function() {
+      const squares = document.querySelectorAll('.last-move');
+      squares.forEach(function(square) {
+        if (!square.style.cssText.includes('box-shadow')) {
+          addHighlightStyle([square]);
+        }
+      });
+    }, 2000);
+
+    // Entferne die Auto-Next-Option
+    const autonextElements = document.querySelectorAll('#puzzle-toggle-autonext, label[for=\'puzzle-toggle-autonext\']');
+    autonextElements.forEach((element) => {
+      element.remove();
+    });
+  } else {
+    // Wenn die Seite kein Schachbrett enthält, leite die Seite zu Lichess um
+    window.location.href = 'https://lichess.org/training';
+  }
+})();
+</pre>
 
   
 </body>
