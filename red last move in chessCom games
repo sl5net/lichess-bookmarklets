@@ -2,6 +2,10 @@ red last move in chessCom games
 
 javascript:(function(){const style=document.createElement('style');style.innerHTML='.highlight{background-color:red!important;opacity:1!important;}';document.head.appendChild(style);})();
 
+
+Life-Development: 
+https://youtu.be/LXoW0aAtDCk
+
 <pre>
 
 
