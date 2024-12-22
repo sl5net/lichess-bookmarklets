@@ -1,0 +1,30 @@
+red last move in chessCom games
+
+javascript:(function(){const style=document.createElement('style');style.innerHTML='.highlight{background-color:red!important;opacity:1!important;}';document.head.appendChild(style);})();
+
+<pre>
+
+
+Here's a description for the bookmarklet:
+
+**Highlight Last Move Bookmarklet**
+
+This bookmarklet highlights the last move made on the chess board with a strong red color, making it easier to see what's happening on the board. It's especially useful for online chess games where it's easy to miss the last move.
+
+**Features:**
+
+* Highlights the last move with a strong red color
+* Overrides the original highlight color to make it more visible
+* Works probably only at chess.com
+
+**How to use:**
+
+1. Create a new bookmark in your browser
+2. Copy the bookmarklet code and paste it into the URL field
+3. Click on the bookmarklet to activate it
+4. The last move will be highlighted with a strong red color
+
+**Benefits:**
+
+* Never miss a move again!
+* Easily see what's happening on the board
