@@ -1,4 +1,4 @@
-javascript:(function(){
+
     function replaceWithInlineCss(elements, cssStyle) {
         elements.forEach((element) => {
             if (element) {
@@ -110,4 +110,4 @@ javascript:(function(){
             window.location.href = 'https://lichess.org/training';
         }
     }
-})();
+
