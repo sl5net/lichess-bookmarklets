@@ -4,10 +4,6 @@
 
 <p><a href="https://sl5net.github.io/lichess-bookmarklets/jack-of-all-trades.html">Source ♟️jack-of-all-trades</a></p>
 
-<a href="javascript:(function(){if(window.location.href.includes('chess.com')){const s=document.createElement('style');s.innerHTML='.highlight{background-color:red!important;opacity:1!important}';document.head.appendChild(s)}else{if(document.querySelector('cg-board')){function r(e,s,c){if(!e||e.length===0)return;e.forEach((el,i)=>{if(el&&el.classList.contains(c)){el.classList.remove('black','white',c);el.style.background=Array.isArray(s)?`url(https://lichess1.org/assets/_KA7qyN/piece/${s[i%s.length]}/${c[0]}P.svg)`:s;el.style.backgroundSize='cover'}})}function q(){let f=document.querySelector('.puzzle__feedback.play'),m,ki='url(https://static-cdn.jtvnw.net/jtv_user_pictures/67dcc3a8-669c-4670-96d1-0ad3728c3adb-profile_image-70x70.png)',qu='url(https://i.imgur.com/FhwFGbb.jpg)';if(f){let i=f.querySelector('.instruction em');if(i){if(i.textContent.includes('black'))m='black';else if(i.textContent.includes('white'))m='white'}let k=document.querySelector(`.${m}.king`);if(k)r([k],ki,m);let qn=document.querySelector(`.${m}.queen`);if(qn)r([qn],qu,m)}if(!m){let b=document.querySelector('.cg-wrap');if(b){m=b.classList.contains('orientation-black')?'black':'white';console.log("Current player color:", m);let k=document.querySelector(`.${m}.king`);if(k)r([k],ki,m);let qn=document.querySelector(`.${m}.queen`);if(qn)r([qn],qu,m)}}let pa=document.querySelectorAll(`.${m}.pawn`),sty=[\"cburnett\",\"merida\",\"alpha\",\"pirouetti\",\"chessnut\",\"chess7\",\"reillycraig\",\"companion\",\"riohacha\",\"kosal\",\"le-zigzag\",\"fantasy\",\"spatial\",\"celtic\",\"californiaornament\",\"caliente\",\"pixel\",\"maestro\",\"fresca\",\"cardinal\",\"gioco\",\"tatiana\",\"staunty\",\"cooke\",\"monarchy\",\"governor\",\"dubrovny\",\"icpieces\",\"mpchess\",\"kiwen-suwi\",\"horsey\",\"anarcandy\",\"shapes\",\"letter\",\"disguised\"]; console.log(\"Pawns:\", pa.length);r(Array.from(pa),sty,m)}function b(){const p=document.querySelector('.puzzle__side__user__rating'),g=document.querySelector('.game__meta__infos');if((p&&p.querySelector('strong'))||(g&&g.querySelector('.setup')&&g.querySelector('.setup').textContent.includes('Rated'))){if(p&&p.querySelector('strong'))document.querySelector('.puzzle__side__user').style.backgroundColor='#0B3B0B';else%20document.querySelector('main.round').style.backgroundColor='#0B3B0B'}}q();b();let%20c=0;function%20a(e){e.forEach(el=>{if(el)el.style.cssText+='box-shadow:0%200%2015px%20rgba(0,0,0,0.7);outline:5px%20solid%20black;background-image:linear-gradient(to%20bottom,rgba(255,255,0,0.5),rgba(255,255,0,0.2))'})}const%20l=document.querySelectorAll('.last-move');const%20t=setInterval(function(){const%20l=document.querySelectorAll('.last-move');if(l.length>0){l.forEach(s=>{if(!s.style.cssText.includes('box-shadow'))a([s])});}q();b();},2000);const%20an=document.querySelectorAll('#puzzle-toggle-autonext,label[for=\"puzzle-toggle-autonext\"]');an.forEach(el=>el.remove())}else%20window.location.href='https://lichess.org/training'}})()">
-    ♟️jack of all trades
-</a>
-
 <a href="javascript:(function() {
   if (window.location.href.includes('chess.com')) {
     const s = document.createElement('style');
@@ -128,7 +124,7 @@
     } else window.location.href = 'https://lichess.org/training';
   }
 })()">
-    ♟️jack-of-all-trades __
+    ♟️jack-of-all-trades 5
 </a>
 
 <pre>
