@@ -18,6 +18,6 @@ Key Changes:
 
 How to Use:
 
-    Copy the updated code into your browser's address bar (after removing the javascript: prefix).
+    Copy the code as browser bookmark
 
 king should now have the Scipio image, the queen should have the maiden archer image and the first pawn should have the siege ram image. Other pawns should be themed.
