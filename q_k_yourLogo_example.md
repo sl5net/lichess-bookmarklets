@@ -14,6 +14,10 @@ javascript:(function(){let r=true,o=true;const g=()=>{const b=document.querySele
 * **Disable Auto-Next Puzzle:** If you prefer to manually navigate between puzzles on Lichess, this script removes the "Auto-Next Puzzle" toggle, preventing accidental skipping.
 * **Background Color for Rated Games:**  This feature changes the background color of the game interface to a darker tone when playing a rated game, potentially enhancing focus.
 
+example chesscom:
+
 ![Screenshot_20250101_200205](https://github.com/user-attachments/assets/06642cd3-728c-48a0-a959-548e2129bdad)
+
+example lichess:
 
 ![Screenshot_20250101_144428](https://github.com/user-attachments/assets/2617b222-894b-4d81-b469-21a647786cab)
