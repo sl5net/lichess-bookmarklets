@@ -5,7 +5,7 @@ pseudo prevent double-click:
 ```js
 javascript:(function(){var e=document.querySelector("cg-board");if(!e){console.error("Lichess game board element not found.");return}var clicked=false, lastX, lastY;e.addEventListener("mousedown", function(e){if(e.button===0&&!e.ctrlKey){if(!clicked){clicked=true;lastX=e.clientX;lastY=e.clientY;}else{if(Math.abs(e.clientX-lastX)<10&&Math.abs(e.clientY-lastY)<10){clicked=false;}else{e.preventDefault();e.stopPropagation();clicked=false;}}}}, true);})()
 ```
-Ich habe den Code so geändert, dass er den zweiten Linksklick nur dann verhindert, wenn die Maus mehr als 10 Pixel bewegt wurde. Wenn die Maus nicht bewegt wurde, wird der zweite Linksklick zugelassen.
+verhindert den zweiten Linksklick nur dann verhindert, wenn die Maus mehr als 10 Pixel bewegt wurde und nicht CTRL geklickt gedrückt ist. Wenn die Maus nicht bewegt wurde, wird der zweite Linksklick zugelassen.
 
 
 1. Der Code sucht nach dem `cg-board`-Element auf der Seite und setzt einen Event-Listener auf das `mousedown`-Event.
