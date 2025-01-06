@@ -1,5 +1,35 @@
 pseudo prevent unwanted missclick:
 
+
+# Lichess Deselect on Move (Simple and to the point)
+
+```js
+javascript:(function(){var e=document.querySelector("cg-board");if(!e){console.error("Lichess game board element not found.");return}var lastX=null;var lastY=null;const tolerance=10;var mousemoveListener=null;e.addEventListener("mousedown",function(event){console.log("mousedown event:",event.button,"ctrlKey:",event.ctrlKey);if(event.button===0&&!event.ctrlKey){console.log("Left mouse button is down, activating mousemove listener");if(mousemoveListener)document.removeEventListener("mousemove",mousemoveListener,true);mousemoveListener=function(event){console.log("mousemove event:",event.clientX,",",event.clientY);if(!event.ctrlKey&&(lastX===null||lastY===null||Math.abs(event.clientX-lastX)>tolerance||Math.abs(event.clientY-lastY)>tolerance)){console.log("Mouse moved beyond tolerance without CTRL pressed, simulating right click and removing listener");if(mousemoveListener){document.removeEventListener("mousemove",mousemoveListener,true);mousemoveListener=null;lastX=null;lastY=null}var rect=e.getBoundingClientRect();var x=rect.left+rect.width/2;var y=rect.top+rect.height/2;var mousedownEvent=new MouseEvent('mousedown',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});e.dispatchEvent(mousedownEvent);var mouseupEvent=new MouseEvent('mouseup',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});e.dispatchEvent(mouseupEvent);console.log("mouseup dispatched with position");lastX=event.clientX;lastY=event.clientY}else if(lastX===null||lastY===null||Math.abs(event.clientX-lastX)>tolerance||Math.abs(event.clientY-lastY)>tolerance){console.log("Mouse moved beyond tolerance but ctrl is pressed");lastX=event.clientX;lastY=event.clientY}};document.addEventListener("mousemove",mousemoveListener,true)}},true)})()
+```
+
+How to Use:
+
+    Copy: Copy the entire line of code above.
+
+    Bookmarklet: Update your bookmarklet with this code.
+
+    Lichess: Go to a game on lichess.org and activate the bookmarklet.
+
+    Test:
+
+        Click on a piece (left mouse button), then move the mouse by more than 10 pixels without holding the Ctrl key to trigger the simulated right-click(its for deselecting the selection) and stop tracking.
+
+        After the right-click simulated, you should move the mouse without any further events.
+
+        Click on a piece (left mouse button), and move the mouse while holding the Ctrl key to verify it will not trigger the right click.
+
+        Try moving the mouse before selecting a piece (without left clicking). It will not trigger the right click (its for deselecting the selection).
+
+        Try right clicking and it will behave normally.
+
+
+
+
 # ctrl+left+PLUS
 
 ```js
