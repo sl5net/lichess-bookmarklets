@@ -1,4 +1,4 @@
-pseudo prevent double-click:
+pseudo prevent unwanted double-click:
 
 # ctrl+left+PLUS
 
