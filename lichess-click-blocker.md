@@ -1,7 +1,8 @@
 pseudo prevent unwanted missclick:
 
 # motivation
-at 2:41:21 https://www.youtube.com/watch?v=LezA67JandM&t=9681s
+1. at 2:41:21 https://www.youtube.com/watch?v=LezA67JandM&t=9681s
+2. https://github.com/lichess-org/lila/issues/16730#issuecomment-2572642972
 
 # use default when time is less than 1m50s (or CTRL pressed).
 
