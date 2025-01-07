@@ -1,5 +1,8 @@
 pseudo prevent unwanted missclick:
 
+# motivation
+at 2:41:21 https://www.youtube.com/watch?v=LezA67JandM&t=9681s
+
 # use default when time is less than 1m50s (or CTRL pressed).
 
 ```js
