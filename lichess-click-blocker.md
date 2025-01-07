@@ -1,5 +1,60 @@
 pseudo prevent unwanted missclick:
 
+# use default when time is less than 1m50s (or CTRL pressed).
+
+```js
+javascript:(function(){const board=document.querySelector("cg-board");if(!board){console.error("Board not found");return;}function playSound(t){const a=new(window.AudioContext||window.webkitAudioContext);const o=a.createOscillator();const g=a.createGain();o.connect(g);g.connect(a.destination);o.type='sine';o.frequency.value=440;g.gain.value=0.1;o.start();setTimeout(()=>o.stop(),t);}let lx=null,ly=null,px=null,py=null,tol=14,ml=null,lct=0,dct=500,tid=null,cr=true,mtmid=null,nps=true;board.addEventListener("mousedown",function(e){let m=null,p=document.querySelector('.puzzle__feedback.play');if(p){let i=p.querySelector('.instruction em');if(i){if(i.textContent.includes('black'))m='black';else if(i.textContent.includes('white'))m='white';}}if(!m){const b=document.querySelector('.cg-wrap');if(b)m=b.classList.contains('orientation-black')?'black':'white';}if(!m){console.error("Could not determine the player's color.");return;}let c=`.rclock-${m}`,clockElement=document.querySelector(c);let totalSeconds = 9999;if(clockElement){let timeDiv=clockElement.querySelector('.time');let mi=timeDiv?parseInt(timeDiv.childNodes[0].textContent,10)||0:NaN,se=timeDiv?parseInt(timeDiv.childNodes[2].textContent,10)||0:NaN,te=timeDiv?clockElement.querySelector('tenths'):null,ten=te?parseInt(te.childNodes[0].textContent,10)||0:NaN;totalSeconds = isNaN(mi) ? 9999 : mi * 60 + se + (isNaN(ten) ? 0 : ten / 10);}if (e.button===0){if((Number.isInteger(totalSeconds) && totalSeconds > 1 && totalSeconds < 110) || e.ctrlKey) return;const ct=new Date().getTime();const td=ct-lct;const dx=Math.abs(e.clientX-px);const dy=Math.abs(e.clientY-py);if(nps===null&&td<dct&&dx<=tol&&dy<=tol&&px!==null&&py!==null){playSound(600);console.log("Double click");if(ml)board.removeEventListener("mousemove",ml,true);clearTimeout(tid);clearTimeout(mtmid);lct=0;lx=null;ly=null;px=null;py=null;nps=true;return;}else{lct=ct;}px=lx;py=ly;lx=e.clientX;ly=e.clientY;nps=null;console.log("nps:",nps);console.log("Left button down, activating mm listener");if(ml)board.removeEventListener("mousemove",ml,true);mtmid=setTimeout(function(){ml=function(e){const cc=cr?!e.ctrlKey:true,dx=lx===null?0:Math.abs(e.clientX-lx),dy=ly===null?0:Math.abs(e.clientY-ly);if(nps===null&&cc&&(lx!==null&&ly!==null&&(dx>tol||dy>tol))){console.log("Mouse moved beyond tolerance"+(cr?" without CTRL":"")+", simulating right click");nps=true;console.log("nps:",nps);tid=setTimeout(function(){if(ml){board.removeEventListener("mousemove",ml,true);ml=null;lx=null;ly=null;px=null;py=null;}const r=board.getBoundingClientRect();const x=r.left+r.width/2;const y=r.top+r.height/2;const mde=new MouseEvent('mousedown',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});board.dispatchEvent(mde);const mue=new MouseEvent('mouseup',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});board.dispatchEvent(mue);console.log("mouseup dispatched");},50);}else if(lx===null||ly===null||dx>tol||dy>tol){console.log("Mouse moved beyond tolerance, but ctrl condition is not met");lx=e.clientX;ly=e.clientY;}};board.addEventListener("mousemove",ml,true);},20);}},true);})();
+```
+
+Variables and their purpose:
+
+    board: reference to the chessboard element.
+
+    playSound: function to create an audio tone.
+
+    lx, ly, px, py: variables to store the mouse position for mouse move calculations.
+
+    tol: pixel tolerance to check if mouse has moved.
+
+    ml: variable which points to the mousemove event listener function.
+
+    lct: last click time (for double click detection).
+
+    dct: double click time tolerance.
+
+    tid: settimeout ID.
+
+    cr: variable which determines if CTRL key is required to activate the custom behavior (set to true by default which means CTRL key is not required).
+
+    mtmid: settimeout ID for double click detection
+
+    nps: variable used for double click detection.
+
+    m: player color ('black' or 'white').
+
+    p: variable to select the puzzle feedback element.
+
+    i: variable to select the instruction element.
+
+    b: variable to select the cg-wrap element.
+
+    c: a string used to create the clock element selector (e.g. .rclock-black or .rclock-white).
+
+    clockElement: the element containing the clock.
+
+    timeDiv: The element containing the time.
+
+    mi: minutes remaining.
+
+    se: seconds remaining.
+
+    te: tenths element.
+
+    ten: tenths remaining.
+
+    totalSeconds: the total seconds remaining.
+
+
 # when time is < 1m50s works normal again
 ```js
 javascript:(function(){const board=document.querySelector("cg-board");if(!board){console.error("Board not found");return;}function playSound(t){const a=new(window.AudioContext||window.webkitAudioContext);const o=a.createOscillator();const g=a.createGain();o.connect(g);g.connect(a.destination);o.type='sine';o.frequency.value=440;g.gain.value=0.1;o.start();setTimeout(()=>o.stop(),t);}let lx=null,ly=null,px=null,py=null,tol=14,ml=null,lct=0,dct=500,tid=null,cr=true,mtmid=null,nps=true;board.addEventListener("mousedown",function(e){let m=null,p=document.querySelector('.puzzle__feedback.play');if(p){let i=p.querySelector('.instruction em');if(i){if(i.textContent.includes('black'))m='black';else if(i.textContent.includes('white'))m='white';}}if(!m){const b=document.querySelector('.cg-wrap');if(b)m=b.classList.contains('orientation-black')?'black':'white';}if(!m){console.error("Could not determine the player's color.");return;}let c=`.rclock-${m}`,clockElement=document.querySelector(c);if(!clockElement){console.error(`Could not find clock element for ${m} player.`);return;}let timeDiv=clockElement.querySelector('.time');if(!timeDiv){console.error("Could not find time div within the clock element.");return;}let mi=parseInt(timeDiv.childNodes[0].textContent,10)||0,se=parseInt(timeDiv.childNodes[2].textContent,10)||0,te=clockElement.querySelector('tenths'),ten=te?parseInt(te.childNodes[0].textContent,10)||0:0;let totalSeconds = mi * 60 + se + ten / 10;if (e.button===0){if(totalSeconds < 110 || e.ctrlKey) return;const ct=new Date().getTime();const td=ct-lct;const dx=Math.abs(e.clientX-px);const dy=Math.abs(e.clientY-py);if(nps===null&&td<dct&&dx<=tol&&dy<=tol&&px!==null&&py!==null){playSound(600);console.log("Double click");if(ml)board.removeEventListener("mousemove",ml,true);clearTimeout(tid);clearTimeout(mtmid);lct=0;lx=null;ly=null;px=null;py=null;nps=true;return;}else{lct=ct;}px=lx;py=ly;lx=e.clientX;ly=e.clientY;nps=null;console.log("nps:",nps);console.log("Left button down, activating mm listener");if(ml)board.removeEventListener("mousemove",ml,true);mtmid=setTimeout(function(){ml=function(e){const cc=cr?!e.ctrlKey:true,dx=lx===null?0:Math.abs(e.clientX-lx),dy=ly===null?0:Math.abs(e.clientY-ly);if(nps===null&&cc&&(lx!==null&&ly!==null&&(dx>tol||dy>tol))){console.log("Mouse moved beyond tolerance"+(cr?" without CTRL":"")+", simulating right click");nps=true;console.log("nps:",nps);tid=setTimeout(function(){if(ml){board.removeEventListener("mousemove",ml,true);ml=null;lx=null;ly=null;px=null;py=null;}const r=board.getBoundingClientRect();const x=r.left+r.width/2;const y=r.top+r.height/2;const mde=new MouseEvent('mousedown',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});board.dispatchEvent(mde);const mue=new MouseEvent('mouseup',{bubbles:true,cancelable:true,view:window,button:2,clientX:x,clientY:y,screenX:x,screenY:y});board.dispatchEvent(mue);console.log("mouseup dispatched");},50);}else if(lx===null||ly===null||dx>tol||dy>tol){console.log("Mouse moved beyond tolerance, but ctrl condition is not met");lx=e.clientX;ly=e.clientY;}};board.addEventListener("mousemove",ml,true);},20);}},true);})();
