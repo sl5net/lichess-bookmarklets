@@ -49,6 +49,11 @@ https://static-cdn.jtvnw.net/jtv_user_pictures/290c1f23-c524-4f7d-ab1e-8d603f223
 ChessCom:
 https://images.chesscomfiles.com/uploads/v1/user/76987064.731bbc0c.160x160o.3852921ad478.jpg
 
+Angelika Valkova - Angelika Chessborn - Karlruhe
+https://www.twitch.tv/angelikachessborn
+https://de.wikipedia.org/wiki/Mannschaftskader_der_deutschen_Schachbundesliga_2023/24_(Frauen)
+https://static-cdn.jtvnw.net/jtv_user_pictures/a451c477-0e59-45a3-b366-ee7bb244a406-profile_image-70x70.png
+
 ######### from players.chessbase
 
 Magnus
