@@ -22,6 +22,70 @@ javascript:(function(){let urlParams = new URLSearchParams(location.search);let 
 
 ![Screenshot_20250111_131525](https://github.com/user-attachments/assets/2066835c-66d7-42f5-8f07-0144adb0ac7c)
 
+```txt
+Some Public Chess Players Pictures - just examples:
+
+twitch chess - players
+
+GrandmasterGauri
+https://static-cdn.jtvnw.net/jtv_user_pictures/cccef99e-b321-403f-88d9-6110bfe67e23-profile_image-50x50.png
+
+Schachopa
+https://static-cdn.jtvnw.net/jtv_user_pictures/14736469-dd75-4744-b685-487ab890890b-profile_image-70x70.png
+
+seeh74
+https://static-cdn.jtvnw.net/jtv_user_pictures/67dcc3a8-669c-4670-96d1-0ad3728c3adb-profile_image-70x70.png
+
+gazelle
+https://i.imgur.com/zFHs0of.jpg
+
+Jan Gustafsson
+https://www.twitch.tv/JanistanTV
+https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4b05-profile_image-70x70.png
+
+Katharina Reinecke
+https://players.chessbase.com/picture/rei00027
+https://static-cdn.jtvnw.net/jtv_user_pictures/290c1f23-c524-4f7d-ab1e-8d603f2230eb-profile_image-70x70.png
+ChessCom:
+https://images.chesscomfiles.com/uploads/v1/user/76987064.731bbc0c.160x160o.3852921ad478.jpg
+
+######### from players.chessbase
+
+Magnus
+https://players.chessbase.com/pictureSize/car31024?w=100&h=140
+
+Hikaru
+https://players.chessbase.com/pictureSize/nak29747?w=100&h=140
+
+Gukesh
+https://players.chessbase.com/pictureSize/guk00009?w=100&h=140
+
+Alireza Firouzja
+https://players.chessbase.com/pictureSize/fir00013?w=100&h=140
+
+Kumar
+https://players.chessbase.com/pictureSize/eri00015?w=100&h=140
+
+Ding
+https://players.chessbase.com/pictureSize/din24719?w=100&h=140
+
+########## images from lichess:
+
+Großmeister Schach-Bundestrainer Jan Gustafsson
+https://image.lichess1.org/display?fmt=webp&h=350&op=thumbnail&path=janistantv:streamer:janistantv:D9ySmqBN.jpg&w=350&sig=74899305924251a959094373cc863ba73293b5b1
+
+########## images from somewhre else:
+
+k=https://duckduckgo.com/i/f96d4798.png
+
+sadisticTushi:
+https://yt3.ggpht.com/K5L0YNz7XqOJuVcDSkv6S1OPCIL7u42cSg-HMXCsYddBFfW-ORXIfqpHmNI-2Q6gEL0Ig3ypWA=s48-c-k-c0x00ffffff-no-rj
+
+sl5 logo
+k=https://sl5.de/wp-content/uploads/2025/01/SL5net_logo_white_shadow_on_blue_w990.png
+
+```
+
 
 # now it doesn't forget your input (localStorage)
 
