@@ -45,6 +45,7 @@ https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4
 
 Katharina Reinecke
 https://players.chessbase.com/picture/rei00027
+https://www.schachbund.de/assets/images/2/reinecke_katharina_2024_berlin_dsb-gs_8b_cropped-fd384ed8.png
 https://static-cdn.jtvnw.net/jtv_user_pictures/290c1f23-c524-4f7d-ab1e-8d603f2230eb-profile_image-70x70.png
 ChessCom:
 https://images.chesscomfiles.com/uploads/v1/user/76987064.731bbc0c.160x160o.3852921ad478.jpg
