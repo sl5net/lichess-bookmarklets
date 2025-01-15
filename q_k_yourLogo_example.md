@@ -1,7 +1,7 @@
 # add: don't greet players we have played already:
 
 works also now in Greasemonkey for Firefox (needs eventually use space instead for `%20` ) 
-https://stackoverflow.com/questions/79358576/greasemonkey-script-no-errors-but-inactive-works-as-bookmarklet
+
 
 ```js
 javascript:
