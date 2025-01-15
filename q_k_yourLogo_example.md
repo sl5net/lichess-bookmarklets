@@ -95,6 +95,10 @@ https://yt3.ggpht.com/K5L0YNz7XqOJuVcDSkv6S1OPCIL7u42cSg-HMXCsYddBFfW-ORXIfqpHmN
 sl5 logo
 k=https://sl5.de/wp-content/uploads/2025/01/SL5net_logo_white_shadow_on_blue_w990.png
 
+funny pics:
+greasemonkey
+https://addons.mozilla.org/user-media/addon_icons/0/748-64.png?modified=1531822767
+
 ```
 
 
