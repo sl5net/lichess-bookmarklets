@@ -32,8 +32,14 @@ javascript:(function(){let urlParams = new URLSearchParams(location.search);let 
 
 ![Screenshot_20250111_131525](https://github.com/user-attachments/assets/2066835c-66d7-42f5-8f07-0144adb0ac7c)
 
+
+### Some Public Chess Players Pictures - just examples:
+seeh74: 
+![Screenshot_20250116_104840](https://github.com/user-attachments/assets/31a8d9ae-f80a-444b-907a-81b594c446b3)
+
+
 ```txt
-Some Public Chess Players Pictures - just examples:
+
 
 twitch chess - players
 
