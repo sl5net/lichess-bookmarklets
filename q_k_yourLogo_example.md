@@ -35,7 +35,8 @@ javascript:(function(){let urlParams = new URLSearchParams(location.search);let 
 
 ### Some Public Chess Players Pictures - just examples:
 seeh74: 
-![PhotoFunia-1734953136](https://github.com/user-attachments/assets/ae162469-112f-4c22-8ad3-50fac983e800)
+
+![seeh74](https://github.com/user-attachments/assets/ae162469-112f-4c22-8ad3-50fac983e800)
 
 
 ```txt
