@@ -40,8 +40,7 @@ seeh74:
 ![seeh74](https://github.com/user-attachments/assets/ae162469-112f-4c22-8ad3-50fac983e800)
 
 
-```txt
-
+```js
 
 twitch chess - players
 
@@ -59,7 +58,7 @@ https://i.imgur.com/zFHs0of.jpg
 https://imgur.com/FhwFGbb
 
 Jan Gustafsson
-```js
+
 https://www.twitch.tv/JanistanTV
 https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4b05-profile_image-70x70.png
 https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4b05-profile_image-150x150.png
