@@ -67,6 +67,10 @@ https://www.twitch.tv/JanistanTV
 https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4b05-profile_image-70x70.png
 https://static-cdn.jtvnw.net/jtv_user_pictures/3a67aaa5-a1eb-4375-b2b4-332a7a6b4b05-profile_image-150x150.png
 
+Rasmus
+https://static-cdn.jtvnw.net/jtv_user_pictures/40c1cb9b-d351-45f1-a092-24e6da4758b9-profile_image-70x70.png
+
+
 Katharina Reinecke
 https://players.chessbase.com/picture/rei00027
 https://www.schachbund.de/assets/images/2/reinecke_katharina_2024_berlin_dsb-gs_8b_cropped-fd384ed8.png
